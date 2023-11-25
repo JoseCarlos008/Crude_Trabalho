@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="scriptphp.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {background-color: #333;}
+        .login {
+        background: #333;
+        border: 1px solid black;
+        box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 400px;
+        margin-top: 100px;
+        color: white
+        }
+    </style>
+</head>
+<body>
+    <form action="salvar.php" name="form1" id="form1">
+        <div class="login">
+            <p>Insira seu nome completo:</p>
+            <input required type="text" name="nome" id="name">
+            <p>Digite seu nome de Usuario</p>
+            <input required type="nickName" name="nickName" id="nickName">
+		    <p>Insira sua senha:</p>
+            <input required type="password" name="password" id="password">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+    <script>
+        function verificaForm1(){
+            if (form1.name.value == ''){
+        
+                alert("Existem campos vasios!");
+                var name = document.getElementById("name").value;
+                alert("Nome: "+ name);
+                form1.name.focus();
+                document.getElementById("name").style.backgroundColor = "orange";
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return false;
+            }
+                if (form1.nickName.value == ''){
+        
+                alert("Existem campos vasios!");
+                var nickName = document.getElementById("nickName").value;
+                alert("nickName: "+ nickName);
+                form1.nickName.focus();
+                document.getElementById("nickName").style.backgroundColor = "orange";
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                return false;
+                }
+        
+                    else if (form1.password.value == ''){
+        
+                        alert("Existem campos vasios!");
+                        var password = document.getElementById("password").value;
+                        alert("Senha: "+ password);
+                        form1.password.focus();
+                        document.getElementById("password").style.backgroundColor = "orange";
+                        event.preventDefault();
+                        event.stopImmediatePropagation();
+                        return false;
+                        }
+        
+        } 
+        
+        function removerCaracteresEspeciais(string) {
+        return string.replace(/[^a-zA-Z0-9]/g, "");
+        }
+    </script>
+</body>
+</html> 
